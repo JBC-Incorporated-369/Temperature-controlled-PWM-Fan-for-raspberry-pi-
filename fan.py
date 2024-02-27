@@ -5,7 +5,7 @@ import os
 # Setup GPIO using BCM numbering
 GPIO.setmode(GPIO.BCM)
 
-# Set the GPIO pin for the fan
+# Set the GPIO pin that the Fan is connected to.
 fan_pin = 18
 GPIO.setup(fan_pin, GPIO.OUT)
 
@@ -13,7 +13,7 @@ GPIO.setup(fan_pin, GPIO.OUT)
 fan_pwm = GPIO.PWM(fan_pin, 100)  # PWM frequency set to 100 Hz
 
 # Define temperature threshold and fan power
-on_threshold = 40  # Fan turns on above this temperature
+on_threshold = 40  # Fan turns on at full power above this temperature
 low_power_duty_cycle = 20  # Fan runs at 20% power when below on_threshold
 
 try:
